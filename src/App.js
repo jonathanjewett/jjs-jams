@@ -40,9 +40,9 @@ function App() {
   const searchBar = (e) => {
     updateSearchWord(e.target.value);
     let newResults = [];
-    for (var i = 0; i < sampleData.length; i++) {
-      if (e.target.value.length > 0 && sampleData[i].artist.toLowerCase().includes(e.target.value.toLowerCase())) {
-        newResults.push(sampleData[i]);
+    for (var i = 0; i < original.length; i++) {
+      if (e.target.value.length > 0 && original[i].artist.toLowerCase().includes(e.target.value.toLowerCase())) {
+        newResults.push(original[i]);
       }
     }
     updateResults(newResults);
