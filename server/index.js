@@ -1,12 +1,14 @@
 const express = require('express')
+const cors = require('cors');
 const seq = require('../db/db.js');
 const Artist = require('../db/models/Artist.js');
 const Album = require('../db/models/Album.js');
 const jams_api = require('../db/jams_api.js');
-const app = express()
-const port = 3001
+const app = express();
+const port = 3001;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

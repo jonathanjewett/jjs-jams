@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
+import axios from 'axios';
 import './App.css';
 import Results from './components/Results.jsx';
 import Search from './components/Search.jsx';
@@ -41,7 +42,7 @@ function App() {
     updateSearchWord(e.target.value);
     let newResults = [];
     for (var i = 0; i < original.length; i++) {
-      if (e.target.value.length > 0 && original[i].artist.toLowerCase().includes(e.target.value.toLowerCase())) {
+      if (e.target.value.length > 0 && original[i].name.toLowerCase().includes(e.target.value.toLowerCase())) {
         newResults.push(original[i]);
       }
     }
@@ -56,36 +57,50 @@ function App() {
     updateNewAlbum(e.target.value);
   }
 
+  // const submitNew = (e) => {
+  //   e.preventDefault();
+  //   for (var i = 0; i < original.length; i++) {
+  //     if (original[i].artist.toLowerCase() === newArtist.toLowerCase()) {
+  //       for (var p = 0; p < original[i].albums.length; p++) {
+  //         if (original[i].albums[p].name.toLowerCase() === newAlbum.toLowerCase()) {
+  //           return;
+  //         }
+  //       }
+  //       // let tempObj = original[i];
+  //       // tempObj.albums.push({name: newAlbum});
+  //       updateOriginal(original.map(x => {
+  //         if (x.artist.toLowerCase() !== newArtist.toLowerCase()) {
+  //           return x;
+  //         }
+  //         return {...x, albums: [...x.albums, {name: newAlbum}]};
+  //       }));
+
+  //       return;
+  //     }
+  //   }
+
+  //   updateOriginal([...original, {artist: newArtist, albums: [{name: newAlbum}]}]);
+  // }
+
   const submitNew = (e) => {
-    e.preventDefault();
-    for (var i = 0; i < original.length; i++) {
-      if (original[i].artist.toLowerCase() === newArtist.toLowerCase()) {
-        for (var p = 0; p < original[i].albums.length; p++) {
-          if (original[i].albums[p].name.toLowerCase() === newAlbum.toLowerCase()) {
-            return;
-          }
-        }
-        // let tempObj = original[i];
-        // tempObj.albums.push({name: newAlbum});
-        updateOriginal(original.map(x => {
-          if (x.artist.toLowerCase() !== newArtist.toLowerCase()) {
-            return x;
-          }
-          return {...x, albums: [...x.albums, {name: newAlbum}]};
-        }));
-
-        return;
-      }
-    }
-
-    updateOriginal([...original, {artist: newArtist, albums: [{name: newAlbum}]}]);
+    axios.post('http://localhost:3001/artists', {
+      artist_name: newArtist,
+      album_name: newAlbum
+    })
   }
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/artists').then((res) => {
+      const newCollection = res.data;
+      updateOriginal(newCollection);
+    })
+  }, []);
 
   return (
     <div>
       <h1>JJ's Jams</h1>
       <Search handleSearch={searchBar}/>
-      {results.map((artist) => <Results artist={artist.artist} albums={artist.albums} />)}
+      {results.map((artist) => <Results key={artist.artist_id} artist={artist.name} albums={artist.albums} />)}
       <AddAlbum handleNewArtist={artistBar} handleNewAlbum={albumBar} handleSubmit={submitNew}/>
     </div>
   );

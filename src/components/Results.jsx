@@ -8,15 +8,15 @@ const Results = (props) => {
         <div className="results">
             <table className="artists">
                 <thead>
-                    <tr>
-                        <th>
+                    <tr key={props.artist}>
+                        <th key={props.artist}>
                             {props.artist}
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.albums.map((album) => 
-                    <tr>
+                    <tr key={album.name}>
                         <td key={album.name}>{album.name}</td>
                     </tr>)}
                 </tbody>
