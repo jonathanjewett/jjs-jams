@@ -1,0 +1,17 @@
+.results {
+    display: flex;
+    flex-direction: column;
+}
+
+.artists {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+    background-color: #457b9d;
+}
+
+.albums {
+    text-align: center;
+    background-color: #a8dadc;
+}

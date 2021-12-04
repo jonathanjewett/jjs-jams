@@ -1,0 +1,5 @@
+.addAlbum {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #e63946;
+}

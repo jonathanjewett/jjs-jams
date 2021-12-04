@@ -39,9 +39,10 @@
 }
 
 h1 {
-  color: white;
+  text-align: center;
+  color: #f1faee;
 }
 
 body {
-  background-color: black;
+  background-color: #1d3557;
 }
