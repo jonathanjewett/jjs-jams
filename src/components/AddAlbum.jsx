@@ -12,6 +12,7 @@ const AddAlbum = (props) => {
                 Album: 
                 <input type="text"/>
             </label>
+            <input type="submit" value="Submit"/>
         </form>
     );
 }

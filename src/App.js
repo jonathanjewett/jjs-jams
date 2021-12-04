@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Results from './components/Results.jsx';
 import Search from './components/Search.jsx';
@@ -28,11 +29,27 @@ function App() {
       ]
     }
   ];
+
+  const [results, updateResults] = useState([]);
+  const [searchWord, updateSearchWord] = useState("");
+
+
+  const searchBar = (e) => {
+    updateSearchWord(e.target.value);
+    let newResults = [];
+    for (var i = 0; i < sampleData.length; i++) {
+      if (e.target.value.length > 0 && sampleData[i].artist.toLowerCase().includes(e.target.value)) {
+        newResults.push(sampleData[i]);
+      }
+    }
+    updateResults(newResults);
+  };
+
   return (
     <div>
       <h1>JJ's Jams</h1>
-      <Search/>
-      <Results/>
+      <Search handleSearch={searchBar}/>
+      <Results results={results}/>
       <AddAlbum/>
     </div>
   );

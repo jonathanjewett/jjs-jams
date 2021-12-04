@@ -8,6 +8,7 @@ const Search = (props) => {
             className="searchBox" 
             type="text" 
             placeholder="Search Artist or Album"
+            onChange={props.handleSearch}
             />
             <button type="submit">Search</button>
         </form>
