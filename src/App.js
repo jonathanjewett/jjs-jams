@@ -30,8 +30,11 @@ function App() {
     }
   ];
 
+  const [original, updateOriginal] = useState(sampleData);
   const [results, updateResults] = useState([]);
   const [searchWord, updateSearchWord] = useState("");
+  const [newArtist, updateNewArtist] = useState("");
+  const [newAlbum, updateNewAlbum] = useState("");
 
 
   const searchBar = (e) => {
@@ -45,12 +48,45 @@ function App() {
     updateResults(newResults);
   };
 
+  const artistBar = (e) => {
+    updateNewArtist(e.target.value);
+  }
+
+  const albumBar = (e) => {
+    updateNewAlbum(e.target.value);
+  }
+
+  const submitNew = (e) => {
+    e.preventDefault();
+    for (var i = 0; i < original.length; i++) {
+      if (original[i].artist.toLowerCase() === newArtist.toLowerCase()) {
+        for (var p = 0; p < original[i].albums.length; p++) {
+          if (original[i].albums[p].name.toLowerCase() === newAlbum.toLowerCase()) {
+            return;
+          }
+        }
+        // let tempObj = original[i];
+        // tempObj.albums.push({name: newAlbum});
+        updateOriginal(original.map(x => {
+          if (x.artist.toLowerCase() !== newArtist.toLowerCase()) {
+            return x;
+          }
+          return {...x, albums: [...x.albums, {name: newAlbum}]};
+        }));
+
+        return;
+      }
+    }
+
+    updateOriginal([...original, {artist: newArtist, albums: [{name: newAlbum}]}]);
+  }
+
   return (
     <div>
       <h1>JJ's Jams</h1>
       <Search handleSearch={searchBar}/>
       {results.map((artist) => <Results artist={artist.artist} albums={artist.albums} />)}
-      <AddAlbum/>
+      <AddAlbum handleNewArtist={artistBar} handleNewAlbum={albumBar} handleSubmit={submitNew}/>
     </div>
   );
 }
