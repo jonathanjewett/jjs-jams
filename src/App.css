@@ -38,9 +38,19 @@
   }
 }
 
+div.header {
+  height: 100%;
+  background-image: url(/home/sevro/hackreactor/jjs-jams/src/components/images/Yuji-Itadori-Dance.gif);
+}
+
 h1 {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #f1faee;
+  font-size: 50px;
+  text-shadow: -1px -1px 0 #000, 5px -1px 0 #000, -1px 5px 0 #000, 1px 1px 0 #000;
+  height: 650px;
 }
 
 body {

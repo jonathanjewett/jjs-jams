@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import Results from './components/Results.jsx';
@@ -10,23 +10,23 @@ function App() {
     {
       artist: "Dance Gavin Dance",
       albums: [
-        {name: "Downtown Battle Mountain 2"},
-        {name: "Mothership"}
+        { name: "Downtown Battle Mountain 2" },
+        { name: "Mothership" }
       ]
     },
     {
       artist: "Arctic Monkeys",
       albums: [
-        {name: "Whatever People Say I am, That's What I'm Not"},
-        {name: "Tranquility Base Hotel & Casino"}
+        { name: "Whatever People Say I am, That's What I'm Not" },
+        { name: "Tranquility Base Hotel & Casino" }
       ]
     },
     {
       artist: "blink-182",
       albums: [
-        {name: "Enema of The State"},
-        {name: "The Mark, Tom And Travis Show"},
-        {name: "Take Off Your Pants And Jacket"}
+        { name: "Enema of The State" },
+        { name: "The Mark, Tom And Travis Show" },
+        { name: "Take Off Your Pants And Jacket" }
       ]
     }
   ];
@@ -98,10 +98,12 @@ function App() {
 
   return (
     <div>
-      <h1>JJ's Jams</h1>
-      <Search handleSearch={searchBar}/>
+      <div className="header">
+        <h1>JJ's Jams</h1>
+      </div>
+      <Search handleSearch={searchBar} />
       {results.map((artist) => <Results key={artist.artist_id} artist={artist.name} albums={artist.albums} />)}
-      <AddAlbum handleNewArtist={artistBar} handleNewAlbum={albumBar} handleSubmit={submitNew}/>
+      <AddAlbum handleNewArtist={artistBar} handleNewAlbum={albumBar} handleSubmit={submitNew} />
     </div>
   );
 }
