@@ -1,5 +1,43 @@
 .addAlbum {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #e63946;
+}
+
+.artistBar {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    
+}
+
+.artistDiv {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.albumDiv {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.albumBar {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.addButton {
+    height: 25px;
+}
+
+input {
+    margin: 5px;
 }

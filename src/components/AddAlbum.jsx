@@ -4,16 +4,20 @@ import './AddAlbum.css';
 const AddAlbum = (props) => {
     return (
         <form className="addAlbum">
-            <label>
-                Artist:
-                <input type="text" onChange={props.handleNewArtist}/>
-            </label>
-            <label>
-                Album: 
-                <input type="text" onChange={props.handleNewAlbum}/>
-            </label>
-            <input type="submit" value="Submit" onClick={props.handleSubmit}/>
-        </form>
+            <div className="artistDiv">
+                <label className="artistBar">
+                    Artist:
+                </label>
+                <input type="text" onChange={props.handleNewArtist} />
+            </div>
+            <div className="albumDiv">
+                <label className="albumBar">
+                    Album:
+                </label>
+                <input type="text" onChange={props.handleNewAlbum} />
+            </div>
+            <input type="submit" value="Submit" className="addButton" onClick={props.handleSubmit} />
+        </form >
     );
 }
 
