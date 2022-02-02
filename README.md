@@ -1,3 +1,20 @@
+# Vinyl and CD Tracking Application
+
+## Purpose
+
+This app was started to help me track what vinyls and cds are currently in my collection via my mobile device when visiting physical stores. At home I can just check my collection but as its grown its become more of a hassle to look through. This application should solve that issue.
+
+http://g.recordit.co/SLKNvwe6LN.gif
+
+## Progress
+- Currently able to add artists and albums to a database
+- Can search using artist name
+
+## Next
+- Modify search function to include album titles
+- Add function to remove albums in case of typos
+- Deployment for use with phone via internet
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
