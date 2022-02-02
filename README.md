@@ -4,6 +4,9 @@
 
 This app was started to help me track what vinyls and cds are currently in my collection via my mobile device when visiting physical stores. At home I can just check my collection but as its grown its become more of a hassle to look through. This application should solve that issue.
 
+![IMYHCfo2iB](https://user-images.githubusercontent.com/57540412/152102040-673223b9-e8a7-43d7-95a0-d4b3b1b82036.gif)
+
+
 http://g.recordit.co/SLKNvwe6LN.gif
 
 ## Progress
