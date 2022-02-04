@@ -4,6 +4,16 @@
 
 This app was started to help me track what vinyls and cds are currently in my collection via my mobile device when visiting physical stores. At home I can just check my collection but as its grown its become more of a hassle to look through. This application should solve that issue.
 
+## Technology Used
+![javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![postgresql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+
 ![IMYHCfo2iB](https://user-images.githubusercontent.com/57540412/152102040-673223b9-e8a7-43d7-95a0-d4b3b1b82036.gif)
 
 
